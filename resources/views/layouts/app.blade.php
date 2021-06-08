@@ -49,31 +49,31 @@
             <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
             <div :class="isOpen ? 'flex' : 'hidden'"
                 class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
-                <a class="text-sm font-medium text-gray-200 hover:scale-125 ease-out transition duration-300 transform hover:text-indigo-400"
+                <a class="text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition duration-300 transform hover:text-indigo-400"
                     name="test" href="{{ route('hotels') }}">Hotel List</a>
 
                 @auth
                     @if (Auth::user()->email == 'admin@admin.com')
-                        <a class="text-sm font-medium text-gray-200 hover:scale-125 ease-out transition duration-300 transform hover:text-indigo-400"
+                        <a class="text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition duration-300 transform hover:text-indigo-400"
                             href="{{ route('dashboard') }}">Dashboard</a>
                     @endif
-                    <a class="text-sm font-medium text-gray-200 hover:scale-125 ease-out transition duration-300 transform hover:text-indigo-400"
+                    <a class="text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition duration-300 transform hover:text-indigo-400"
                         href="{{ route('profile') }}">{{ Auth::user()->name }}</a>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button
-                            class=" text-sm font-medium text-gray-200 hover:scale-125 ease-out transition
-                                                                                                duration-300 transform hover:text-indigo-400"
+                            class=" text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition
+                                                                                                                                                duration-300 transform hover:text-indigo-400"
                             type="submit">Logout</button>
                     </form>
                 @endauth
                 @guest
-                    <a class="text-sm font-medium text-gray-200 hover:scale-125 ease-out transition duration-300 transform hover:text-indigo-400"
+                    <a class="text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition duration-300 transform hover:text-indigo-400"
                         href="{{ route('login') }}">Login</a>
-                    <a class="text-sm font-medium text-gray-200 hover:scale-125 ease-out transition duration-300 transform hover:text-indigo-400"
+                    <a class="text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition duration-300 transform hover:text-indigo-400"
                         href="{{ route('register') }}">Register</a>
                 @endguest
-                <a class="px-4 py-1 text-sm font-medium text-center text-gray-200 transition duration-300  hover:scale-110 ease-out transform border rounded hover:bg-indigo-400"
+                <a class="px-4 py-1 text-sm font-medium text-center text-gray-200 transition duration-300  sm:hover:scale-110 hover:scale-105 ease-out transform border rounded hover:bg-indigo-400"
                     href="#">About Us</a>
             </div>
         </nav>
@@ -88,18 +88,19 @@
                             </h2>
                             <p class="text-sm md:text-base text-gray-50 mb-4">Explore all high class hotels to places
                                 you want to travel</p>
-                            <a href="#" id="bookButton" class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 transition transform duration-300 
-                                hover:scale-110 hover:border-transparent">
+                            <a href="#" id="bookButton"
+                                class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 transition transform duration-300  hover:scale-110 hover:border-transparent">
                                 Explore Now</a>
                         </div>
-                        <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
+                        <div
+                            class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center sm:inline-block hidden">
                             <div id="allimage" class="h-48 flex flex-wrap content-center">
                                 <div>
                                     <img class=" sectionImage mt-28 hidden xl:block animate-fade-in-right"
                                         src="{{ asset('images/home_page/home1.png') }}">
                                 </div>
                                 <div>
-                                    <img class="sectionImage inline-block mt-24 md:mt-0 p-8 md:p-0 animate-fade-in-right"
+                                    <img class="sectionImage sm:inline-block mt-24 md:mt-0 p-8 md:p-0 animate-fade-in-right"
                                         src="{{ asset('images/home_page/home2.png') }}">
                                 </div>
                                 <div>

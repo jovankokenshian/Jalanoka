@@ -3,7 +3,7 @@
 @section('content')
     <section class="flex flex-col md:flex-row h-screen items-center">
 
-        <div class="bg-indigo-600 hidden bg-cover lg:block w-full md:w-1/2 xl:w-2/3 h-auto">
+        <div class="bg-indigo-600 hidden bg-cover lg:block w-full md:w-1/2 xl:w-2/3 h-full">
             <img src="images/bg/login_image.jpg" alt="" class="w-full h-full object-cover">
         </div>
 
