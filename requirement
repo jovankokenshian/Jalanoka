@@ -1,0 +1,8 @@
+Install Composer, Laravel Mix, node js, tailwindjs
+
+npm run dev
+
+composer require mews/captcha
+composer require intervention/image     
+composer require akaunting/laravel-money
+
