@@ -10,14 +10,15 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "autoprefixer": "^10.2.5",
-        "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19"
+
     },
     "dependencies": {
+        "autoprefixer": "^10.2.5",
+        "axios": "^0.21",
+        "jquery-ui": "^1.12.1",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
         "postcss": "^8.2.15",
-        "tailwindcss": "^2.1.2",
-        "jquery-ui": "^1.12.1"
+        "tailwindcss": "^2.1.2"
     }
 }
