@@ -1,5 +1,8 @@
 require('./bootstrap');
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 if (document.getElementById('bookButton')){
     document.getElementById("bookButton").addEventListener('click', function(event) {
@@ -8,13 +11,15 @@ if (document.getElementById('bookButton')){
         var elems = document.querySelectorAll(".sectionImage");
         [].forEach.call(elems, function(el) {
           el.classList.remove('animate-fade-in-right');
-          el.classList.add('animate-fade-out-left');
+          setTimeout(function (){
+            el.classList.add('animate-fade-out-left');
+            }, 400);   
         });
 
         setTimeout(function (){
             document.getElementById("allimage").remove();
-        }, 1000);    
-    window.location.href = "posts";
+        }, 200);    
+    window.location.href = "hotel_lists";
 
     });
 }

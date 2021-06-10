@@ -15,7 +15,7 @@
                             class="h-24 w-24 object-cover rounded-full">
                         <div id="upfile1"
                             class="opacity-0 hover:opacity-100 rounded-full hover:bg-gray-400 hover:bg-opacity-25 duration-300 absolute inset-0 z-10 flex justify-center items-center text-white font-semibold text-sm text-center select-none
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @error('profile_image') border-red-500 @enderror">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @error('profile_image') border-red-500 @enderror">
                             Change your picture</div>
 
                         <span
@@ -135,7 +135,7 @@
                             <label class="text-xl">Old Password</label>
                             <input type="password" placeholder="*************" name="old_password"
                                 class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @error('old_password') border-red-500 @enderror"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @error('old_password') border-red-500 @enderror"
                                 value="">
                             @error('old_password')
                                 <div class="text-red-500 mt-2 text-sm">
@@ -149,7 +149,7 @@
                                 <label class="text-xl">New Password</label>
                                 <input type="password" placeholder="*************" name="password"
                                     class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @error('password') border-red-500 @enderror"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @error('password') border-red-500 @enderror"
                                     value="">
                                 @error('password')
                                     <div class="text-red-500 mt-2 text-sm">
@@ -162,7 +162,7 @@
                                 <label class="text-xl">Confirm New Password</label>
                                 <input type="password" placeholder="*************" name="password_confirmation"
                                     class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @error('password_confirmation') border-red-500 @enderror"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @error('password_confirmation') border-red-500 @enderror"
                                     value="">
                                 @error('password_confirmation')
                                     <div class="text-red-500 mt-2 text-sm">
@@ -187,7 +187,8 @@
                     </div>
                     <div class="grid gap-6 grid-cols-1 xl:grid-cols-2 mt-6" id="entryDiv">
                         @foreach ($transactions as $transaction)
-                            <div data-toggle="modal" data-target="{{ '#booked-' . $transaction->id }}"
+                            <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-toggle="modal"
+                                data-target="{{ '#booked-' . $transaction->id }}"
                                 class="cursor-pointer sm:grid grid-cols-5 bg-white shadow-2xl relative lg:max-w-3xl sm:p-4 rounded-lg hover:scale-105 ease-out transform transition duration-300 submit">
                                 <div class="flex items-end justify-end w-full bg-cover  rounded-lg"
                                     style="background-image: url('{{ asset('uploads/hotel_rooms/' . $transaction->room->room_image) }}')">
@@ -201,7 +202,6 @@
                                         {{ $transaction->name }}
                                     </p>
                                 </div>
-
                             </div>
                             <div id="{{ 'booked-' . $transaction->id }}" class="modal fade items-center" role="dialog">
                                 <div class="modal-dialog">

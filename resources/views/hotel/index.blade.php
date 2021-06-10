@@ -61,7 +61,9 @@
                 <span class="mt-3 text-sm text-gray-500">{{ $rooms->count() }}
                     {{ Str::plural('room', $rooms->count()) }} available!</span>
                 @if ($rooms->count())
-                    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6" id="entryDiv">
+                    <div data-aos="fade-right" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
+                        class="animate-fade-in-right grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6"
+                        id="entryDiv">
                         @foreach ($rooms as $room)
                             <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden" id="secDiv">
                                 <div class="flex items-end justify-end h-56 w-full bg-cover"

@@ -31234,6 +31234,26 @@ video {
   }
 }
 
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .animate-none {
   -webkit-animation: none;
           animation: none;
@@ -31267,6 +31287,11 @@ video {
 .animate-fade-out-left {
   -webkit-animation: fade-out-left 1s ease-out;
           animation: fade-out-left 1s ease-out;
+}
+
+.animate-fade-in {
+  -webkit-animation: fade-in 2s ease-out;
+          animation: fade-in 2s ease-out;
 }
 
 .mix-blend-normal {
@@ -62795,6 +62820,11 @@ a.close.disabled {
             animation: fade-out-left 1s ease-out;
   }
 
+  .sm\:animate-fade-in {
+    -webkit-animation: fade-in 2s ease-out;
+            animation: fade-in 2s ease-out;
+  }
+
   .sm\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -93930,6 +93960,11 @@ a.close.disabled {
   .md\:animate-fade-out-left {
     -webkit-animation: fade-out-left 1s ease-out;
             animation: fade-out-left 1s ease-out;
+  }
+
+  .md\:animate-fade-in {
+    -webkit-animation: fade-in 2s ease-out;
+            animation: fade-in 2s ease-out;
   }
 
   .md\:mix-blend-normal {
@@ -125069,6 +125104,11 @@ a.close.disabled {
             animation: fade-out-left 1s ease-out;
   }
 
+  .lg\:animate-fade-in {
+    -webkit-animation: fade-in 2s ease-out;
+            animation: fade-in 2s ease-out;
+  }
+
   .lg\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -156206,6 +156246,11 @@ a.close.disabled {
             animation: fade-out-left 1s ease-out;
   }
 
+  .xl\:animate-fade-in {
+    -webkit-animation: fade-in 2s ease-out;
+            animation: fade-in 2s ease-out;
+  }
+
   .xl\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -187341,6 +187386,11 @@ a.close.disabled {
   .\32xl\:animate-fade-out-left {
     -webkit-animation: fade-out-left 1s ease-out;
             animation: fade-out-left 1s ease-out;
+  }
+
+  .\32xl\:animate-fade-in {
+    -webkit-animation: fade-in 2s ease-out;
+            animation: fade-in 2s ease-out;
   }
 
   .\32xl\:mix-blend-normal {

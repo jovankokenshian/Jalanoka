@@ -55,7 +55,7 @@
                 @auth
                     @if (Auth::user()->email == 'admin@admin.com')
                         <a class="text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition duration-300 transform hover:text-indigo-400"
-                            href="{{ route('dashboard') }}">Dashboard</a>
+                            href="{{ route('admin') }}">Admin Dashboard</a>
                     @endif
                     <a class="text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition duration-300 transform hover:text-indigo-400"
                         href="{{ route('profile') }}">{{ Auth::user()->name }}</a>
@@ -63,7 +63,7 @@
                         @csrf
                         <button
                             class=" text-sm font-medium text-gray-200 sm:hover:scale-125 hover:scale-105 ease-out transition
-                                                                                                                                                duration-300 transform hover:text-indigo-400"
+                                                                                                                                                                            duration-300 transform hover:text-indigo-400"
                             type="submit">Logout</button>
                     </form>
                 @endauth
@@ -88,7 +88,7 @@
                             </h2>
                             <p class="text-sm md:text-base text-gray-50 mb-4">Explore all high class hotels to places
                                 you want to travel</p>
-                            <a href="#" id="bookButton"
+                            <a href="{{ route('hotels') }}" id="bookButton"
                                 class="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 transition transform duration-300  hover:scale-110 hover:border-transparent">
                                 Explore Now</a>
                         </div>

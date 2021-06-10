@@ -21,7 +21,7 @@ class InsertAdminToUsersTable extends Migration
                 'password' => '$2y$10$cdPDAgchej78MIXFZRJs5O/3jpMHz62.TgLwmsScHucg1pm6DFP4i', //admin
                 'phone' => '044444444444',
                 'date_of_birth' => '1882-06-17',
-                'profile_image' => '1620985584.jpg',
+                'profile_image' => 'admin.jpg',
                 'created_at' => '1970-12-12 00:00:02',
                 'updated_at' => '1970-12-12 00:00:02',
             ]

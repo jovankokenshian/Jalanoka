@@ -15,6 +15,10 @@ class Hotel extends Model
         'star'
     ];
 
+    protected $rules = [
+        'name' => 'unique:hotels,name'
+    ];
+
     public function rooms()
     {
         return $this->hasMany(Room::class);

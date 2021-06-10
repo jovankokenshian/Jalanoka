@@ -6,7 +6,9 @@ use Carbon\Carbon;
 use App\Models\Room;
 use App\Rules\checkOut;
 use App\Rules\ValidRoom;
+use Akaunting\Money\Money;
 use App\Rules\PhoneNumber;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -50,9 +52,20 @@ class OrderController extends Controller
         ]);
 
 
-        $room->room_ordered = $request->room_ordered;
+        $room->room_ordered += $request->room_ordered;
         $room->save();
-
-        return back()->with('success', 'Order Successful! Click here to see your ordered list in profile page!');
+        return back()->with(
+            [
+                "TitleName" => $room->hotel->name . "-" . $room->name,
+                "success" => $request->name,
+                "email" => $request->email,
+                'phone' => $request->phone,
+                'room_ordered' => $request->room_ordered,
+                'check_in' => $request->check_in,
+                'check_out' => $request->check_out,
+                'price' => Money::IDR($room->price, true),
+                'totalprice' => Money::IDR($totalprice, true)
+            ]
+        );
     }
 }

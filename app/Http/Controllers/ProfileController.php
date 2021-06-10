@@ -51,7 +51,7 @@ class ProfileController extends Controller
     {
         //Validation
         $this->validate($request, [
-            'profile_image'     =>  'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'profile_image'     =>  'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         //store Image
         $user = User::where('id', Auth::user()->id)

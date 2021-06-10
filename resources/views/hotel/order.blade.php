@@ -5,8 +5,8 @@
         <div class=" bg-cover w-full px-8 h-screen justify-center"
             style="background-image: url('../images/bg/order_image.jpg');">
             <div
-                class="w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    flex items-center justify-center">
+                class="animate-fade-in w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        flex items-center justify-center">
                 <form class="max-w-xl m-4 p-10 bg-white rounded shadow-2xl" method="POST"
                     action="{{ route('orderRoom', $room) }}">
                     @csrf
@@ -89,18 +89,62 @@
                         <div class="text-center">
                             <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
                                 href="{{ route('profile') }}">
-                                {{ session('success') }}
+                                Order Successful! Click here to see your ordered list in profile page!
                             </a>
                         </div>
                     @endif
                     <div class="mt-4">
-                        <input value="{{ $room->convertedPrice($room->price) }}" id="lulz"
+                        <input value="{{ $room->convertedPrice($room->price) }}" id="finalprice"
                             class="cursor-pointer px-4 py-2 text-white font-light tracking-wider bg-gray-900 rounded hover:scale-105 ease-out transition duration-300 transform hover:bg-gray-700 hover:shadow-xl"
                             type="submit">
                     </div>
                 </form>
             </div>
         </div>
+
+
+        @if (session('success'))
+            <div id="hiddenModal" data-toggle="modal" data-target="#receivedTransaction"></div>
+            <div id="receivedTransaction" class="modal fade items-center" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title font-semibold">Your Invoice
+                            </h3>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body flex flex-col px-6 py-5 bg-gray-50">
+                            <h4 class="text-gray-800 capitalize text-xl font-bold mb-5">
+                                {{ session('TitleName') }}
+                            </h4>
+                            <pre><b>{{ str_pad('Orderer', 20, ' ') }}:</b>      {{ session('success') }}</pre>
+                            <pre><b>{{ str_pad('Email', 20, ' ') }}:</b>      {{ session('email') }}</pre>
+                            <pre><b>{{ str_pad('Phone Number', 20, ' ') }}:</b>      {{ session('phone') }}</pre>
+                            <pre><b>{{ str_pad('Room Ordered', 20, ' ') }}:</b>      {{ session('room_ordered') }}</pre>
+                            <pre><b>{{ str_pad('Date of Stay', 20, ' ') }}:</b>      {{ session('check_in') }} - {{ session('check_out') }}</pre>
+                            <pre><b>{{ str_pad('Price per Day', 20, ' ') }}:</b>      {{ session('price') }}/day</pre>
+                            <pre><b>{{ str_pad('Total Price', 20, ' ') }}:</b>      {{ session('totalprice') }}</pre>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $("#hiddenModal").click();
+                });
+
+            </script>
+        @endif
+
+
+
     </section>
     <script type="text/javascript">
         var value = "<?php print $room->price; ?>";
@@ -121,7 +165,7 @@
                 var conv = "Rp. " + totalPrice.toFixed(2).replace(".", ",").replace(
                     /(\d)(?=(\d{3})+(?!\d))/g,
                     "$1.");
-                $("#lulz").val(conv);
+                $("#finalprice").val(conv);
             });
         });
 

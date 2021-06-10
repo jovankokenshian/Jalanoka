@@ -2,21 +2,20 @@
 
 namespace App\Rules;
 
-use Hamcrest\Type\IsNumeric;
 use Illuminate\Contracts\Validation\Rule;
 
-class ValidRoom implements Rule
+class aboveOne implements Rule
 {
-    private $roomval;
     private $error_message;
+
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct($roomtotal, $roomordered)
+    public function __construct()
     {
-        $this->roomval = $roomtotal - $roomordered;
+        //
     }
 
     /**
@@ -34,11 +33,8 @@ class ValidRoom implements Rule
         } else if ($value < 1) {
             $this->error_message = "Value must be above 0!";
             return false;
-        } else if ($value > $this->roomval) {
-            $this->error_message = "Value must be equal to or below " . $this->roomval . "!";
-            return false;
-        } else
-            return true;
+        }
+        return true;
     }
 
     /**

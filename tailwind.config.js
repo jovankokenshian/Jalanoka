@@ -35,10 +35,19 @@ module.exports = {
               transform: 'translateX(-90px)'
           },
         },
+        'fade-in': {
+          '0%': {
+              opacity: '0',
+          },
+          '100%': {
+              opacity: '1',
+          },
+        }
       },
       animation: {
         'fade-in-right': 'fade-in-right 1s ease-out',
         'fade-out-left': 'fade-out-left 1s ease-out',
+        'fade-in': 'fade-in 2s ease-out',
       }
     },
   },

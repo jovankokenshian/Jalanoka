@@ -44,6 +44,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $rules = [
+        'email' => 'unique:users,email'
+    ];
+
     public function getImageAttribute()
     {
         return $this->profile_image;
@@ -52,24 +56,5 @@ class User extends Authenticatable
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
-    }
-
-
-    //fetch post according to user_id
-    public function posts()
-    {
-        return $this->hasMany(Post::class);
-    }
-
-    //fetch like according to user_id
-    public function likes()
-    {
-        return $this->hasMany(Like::class);
-    }
-
-    public function totalLikesReceived()
-    {
-        //has many likes through post
-        return $this->hasManyThrough(Like::class, Post::class);
     }
 }

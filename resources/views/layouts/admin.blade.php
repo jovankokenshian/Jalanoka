@@ -52,7 +52,8 @@
                 </div>
 
                 <nav class="mt-10">
-                    <a class="flex items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100" href="/">
+                    <div class="flex cursor-pointer items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100"
+                        id="clickAll">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -61,11 +62,11 @@
                                 d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
                         </svg>
 
-                        <span class="mx-3">Dashboard</span>
-                    </a>
+                        <span class="mx-3">Dashboard All</span>
+                    </div>
 
-                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                        href="/ui-elements">
+                    <div class="flex cursor-pointer items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                        id="clickHotel">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -73,11 +74,11 @@
                             </path>
                         </svg>
 
-                        <span class="mx-3">UI Elements</span>
-                    </a>
+                        <span class="mx-3">Hotel List</span>
+                    </div>
 
-                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                        href="/tables">
+                    <div class="flex cursor-pointer items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                        id="clickRoom">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -85,11 +86,11 @@
                             </path>
                         </svg>
 
-                        <span class="mx-3">Tables</span>
-                    </a>
+                        <span class="mx-3">Room List</span>
+                    </div>
 
-                    <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-                        href="/forms">
+                    <div class="flex cursor-pointer items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                        id="clickTransaction">
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -97,8 +98,8 @@
                             </path>
                         </svg>
 
-                        <span class="mx-3">Forms</span>
-                    </a>
+                        <span class="mx-3">Transaction List</span>
+                    </div>
                 </nav>
             </div>
             <div class="flex-1 flex flex-col overflow-hidden">
@@ -111,88 +112,16 @@
                             </svg>
                         </button>
 
-                        <div class="relative mx-4 lg:mx-0">
-                            <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
-                                <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
-                                    <path
-                                        d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
-                                </svg>
-                            </span>
 
-                            <input class="form-input w-32 sm:w-64 rounded-md pl-10 pr-4 focus:border-indigo-600"
-                                type="text" placeholder="Search">
-                        </div>
                     </div>
 
                     <div class="flex items-center">
-                        <div x-data="{ notificationOpen: false }" class="relative">
-                            <button @click="notificationOpen = ! notificationOpen"
-                                class="flex mx-4 text-gray-600 focus:outline-none">
-                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                    </path>
-                                </svg>
-                            </button>
-
-                            <div x-show="notificationOpen" @click="notificationOpen = false"
-                                class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>
-
-                            <div x-show="notificationOpen"
-                                class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl overflow-hidden z-10"
-                                style="width: 20rem; display: none;">
-                                <a href="#"
-                                    class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                    <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
-                                        alt="avatar">
-                                    <p class="text-sm mx-2">
-                                        <span class="font-bold" href="#">Sara Salah</span> replied on the <span
-                                            class="font-bold text-indigo-400" href="#">Upload Image</span> artical . 2m
-                                    </p>
-                                </a>
-                                <a href="#"
-                                    class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                    <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                        src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
-                                        alt="avatar">
-                                    <p class="text-sm mx-2">
-                                        <span class="font-bold" href="#">Slick Net</span> start following you . 45m
-                                    </p>
-                                </a>
-                                <a href="#"
-                                    class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                    <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                        src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
-                                        alt="avatar">
-                                    <p class="text-sm mx-2">
-                                        <span class="font-bold" href="#">Jane Doe</span> Like Your reply on <span
-                                            class="font-bold text-indigo-400" href="#">Test with TDD</span> artical . 1h
-                                    </p>
-                                </a>
-                                <a href="#"
-                                    class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                    <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=398&amp;q=80"
-                                        alt="avatar">
-                                    <p class="text-sm mx-2">
-                                        <span class="font-bold" href="#">Abigail Bennett</span> start following you . 3h
-                                    </p>
-                                </a>
-                            </div>
-                        </div>
 
                         <div x-data="{ dropdownOpen: false }" class="relative">
                             <button @click="dropdownOpen = ! dropdownOpen"
                                 class="relative block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none">
                                 <img class="h-full w-full object-cover"
-                                    src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
-                                    alt="Your avatar">
+                                    src="{{ asset('uploads/profile_images/' . $admin) }}" alt="Your avatar">
                             </button>
 
                             <div x-show="dropdownOpen" @click="dropdownOpen = false"
@@ -201,16 +130,83 @@
                             <div x-show="dropdownOpen"
                                 class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                                 style="display: none;">
-                                <a href="#"
+                                <a href="/profile"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
-                                <a href="#"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
-                                <a href="/login"
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout</a>
+                                <a href="/hotel_lists"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Hotel
+                                    Lists</a>
+                                <form method="post" action="{{ route('logout') }}">
+                                    @csrf
+                                    <input type="submit"
+                                        class="block px-4 py-2 text-sm text-left hover:bg-indigo-600 hover:text-white cursor-pointer w-full text-gray-700 bg-transparent"
+                                        value="Log Out">
+                                </form>
                             </div>
                         </div>
                     </div>
                 </header>
+
+                @if ($errors->any())
+                    <div id="NotifError" class="bg-red-50 border-l-8 border-red-900 mb-2">
+                        <div class="flex items-center">
+                            <div class="p-2">
+                                <div class="flex items-center">
+                                    <div class="ml-2">
+                                        <svg id="closeError" class="h-8 w-8 text-red-900 mr-2 cursor-pointer"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <p class="px-6 py-4 text-red-900 font-semibold text-lg">Please fix the
+                                        following
+                                        errors.</p>
+                                </div>
+                                <div class="px-16 mb-4">
+                                    {!! implode('', $errors->all('<li class="text-md font-bold text-red-500 text-sm">:message</li>')) !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+                @if (session('success'))
+                    <div id="NotifSuccess" class="p-5">
+                        <div>
+                            <div
+                                class="flex justify-center items-center m-1 font-medium py-1 px-2 rounded-md text-yellow-700 bg-yellow-100 border border-yellow-300 ">
+                                <div slot="avatar">
+                                    <svg id="closeSuccess" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-info w-5 h-5 mx-2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg>
+                                </div>
+                                <div class="text-xl font-normal  max-w-full flex-initial">
+                                    <div class="py-2">Sucess!!
+                                        <div class="text-sm font-base">{{ session('success') }} </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-auto flex-row-reverse">
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-x cursor-pointer hover:text-yellow-400 rounded-full w-5 h-5 ml-2">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                     <div class="container mx-auto px-6 py-8">
                         <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3>
@@ -244,8 +240,11 @@
                                         </div>
 
                                         <div class="mx-5">
-                                            <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
-                                            <div class="text-gray-500">New Users</div>
+                                            <h4 class="text-2xl font-semibold text-gray-700">{{ $users->count() }}
+                                            </h4>
+                                            <div class="text-gray-500">Registered
+                                                {{ Str::plural('User', $rooms->count()) }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -268,8 +267,10 @@
                                         </div>
 
                                         <div class="mx-5">
-                                            <h4 class="text-2xl font-semibold text-gray-700">200,521</h4>
-                                            <div class="text-gray-500">Total Orders</div>
+                                            <h4 class="text-2xl font-semibold text-gray-700">
+                                                {{ $transactions->count() }}</h4>
+                                            <div class="text-gray-500">Total
+                                                {{ Str::plural('Order', $transactions->count()) }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -289,8 +290,10 @@
                                         </div>
 
                                         <div class="mx-5">
-                                            <h4 class="text-2xl font-semibold text-gray-700">215,542</h4>
-                                            <div class="text-gray-500">Available Products</div>
+                                            <h4 class="text-2xl font-semibold text-gray-700">{{ $rooms->count() }}
+                                            </h4>
+                                            <div class="text-gray-500">Registered Hotel
+                                                {{ Str::plural('Room', $rooms->count()) }}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -301,8 +304,57 @@
 
                         </div>
 
-                        <div class="flex flex-col mt-8">
+                        {{-- Start of Hotel Booking --}}
+                        <div id="HotelAdmin" class="flex flex-col mt-8">
                             <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                                <h3 data-toggle="modal" data-target="#AddNewHotel"
+                                    class="cursor-pointer px-4 pb-2 float-right font-bold text-blue-500 ">
+                                    Add new Hotel</h3>
+
+
+                                <div id="AddNewHotel" class="modal fade items-center" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h3 class="modal-title font-semibold">Add New Hotel
+                                                </h3>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body flex flex-col px-6 py-5 bg-gray-50">
+                                                <form action="{{ route('admin.addHotel') }}" method="post">
+                                                    @csrf
+
+                                                    <pre><b>{{ str_pad('Hotel Name', 20, ' ') }}:</b>      <input class="bg-gray-200" type="text" name="AddHotelname"></pre>
+                                                    <pre><b>{{ str_pad('Address', 20, ' ') }}:</b>      <input class="bg-gray-200" list="AddHoteladdress" name="AddHoteladdress"></pre>
+                                                    <datalist id="AddHoteladdress">
+                                                        <option value="Jakarta">
+                                                        <option value="Surabaya">
+                                                        <option value="Palembang">
+                                                    </datalist>
+                                                    <pre><b>{{ str_pad('Star', 20, ' ') }}:</b>      <input class="bg-gray-200" type="number" min="1" max="5" name="AddHotelstar"></pre>
+
+                                                    <button
+                                                        class="w-1/4 px-4 py-2 my-5 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                                                        type="submit">
+                                                        Add Hotel
+                                                    </button>
+                                                </form>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
                                 <div
                                     class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
                                     <table class="min-w-full">
@@ -313,332 +365,760 @@
                                                     Name</th>
                                                 <th
                                                     class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                    Title</th>
+                                                    Address</th>
                                                 <th
                                                     class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                    Status</th>
-                                                <th
-                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                    Role</th>
+                                                    Hotel Star</th>
                                                 <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
                                             </tr>
                                         </thead>
 
-                                        <tbody class="bg-white">
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                            <img class="h-10 w-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
+                                        @foreach ($hotels as $hotel)
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <div class="flex items-center">
 
-                                                        <div class="ml-4">
-                                                            <div class="text-sm leading-5 font-medium text-gray-900">
-                                                                John Doe
+                                                            <div class="ml-4">
+                                                                <div
+                                                                    class="text-sm leading-5 font-medium text-gray-900">
+                                                                    {{ $hotel->name }}
+                                                                </div>
                                                             </div>
-                                                            <div class="text-sm leading-5 text-gray-500">
-                                                                john@example.com</div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                                        {{ $hotel->address }}</td>
+
+                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <span
+                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">{{ $hotel->star }}</span>
+                                                    </td>
+
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                                        <div data-toggle="modal"
+                                                            data-target="{{ '#hotel_edit-' . $hotel->id }}"
+                                                            class="cursor-pointer text-indigo-600 hover:text-indigo-900">
+                                                            Edit
+                                                        </div>
+                                                        @can('delete', $hotel)
+                                                            <form method="post"
+                                                                action="{{ route('admin.deleteHotel', $hotel) }}">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <input type="submit"
+                                                                    class="cursor-pointer text-red-600 font-semibold hover:text-red-900 bg-transparent"
+                                                                    value="Delete">
+                                                            </form>
+                                                        @endcan
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <div id="{{ 'hotel_edit-' . $hotel->id }}"
+                                                class="modal fade items-center" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h3 class="modal-title font-semibold">Hotel No.
+                                                                {{ sprintf('%02s', $hotel->id) }}
+                                                            </h3>
+                                                            <button type="button" class="close"
+                                                                data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <div class="modal-body flex flex-col px-6 py-5 bg-gray-50">
+                                                            <form action="{{ route('admin.updateHotel') }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <input type="hidden" value={{ $hotel->id }}
+                                                                    name="updateHotelid">
+                                                                <pre><b>{{ str_pad('Hotel Name', 20, ' ') }}:</b>      <input class="bg-gray-200" type="text" value="{{ $hotel->name }}" name="updateHotelname"></pre>
+                                                                <pre><b>{{ str_pad('Address', 20, ' ') }}:</b>      <input class="bg-gray-200" list="address" value="{{ $hotel->address }}" name="updateHoteladdress"></pre>
+                                                                <datalist id="address">
+                                                                    <option value="Jakarta">
+                                                                    <option value="Surabaya">
+                                                                    <option value="Palembang">
+                                                                </datalist>
+                                                                <pre><b>{{ str_pad('Star', 20, ' ') }}:</b>      <input class="bg-gray-200" type="number" min="1" max="5" value="{{ $hotel->star }}" name="updateHotelstar"></pre>
+
+                                                                <button
+                                                                    class="w-1/4 px-4 py-2 my-5 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                                                                    type="submit">
+                                                                    Edit Hotel
+                                                                </button>
+                                                            </form>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Close</button>
                                                         </div>
                                                     </div>
-                                                </td>
 
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
+                                                </div>
+                                            </div>
 
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                </td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                    Owner</td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                            <img class="h-10 w-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
-
-                                                        <div class="ml-4">
-                                                            <div class="text-sm leading-5 font-medium text-gray-900">
-                                                                John Doe
-                                                            </div>
-                                                            <div class="text-sm leading-5 text-gray-500">
-                                                                john@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                </td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                    Owner</td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                            <img class="h-10 w-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
-
-                                                        <div class="ml-4">
-                                                            <div class="text-sm leading-5 font-medium text-gray-900">
-                                                                John Doe
-                                                            </div>
-                                                            <div class="text-sm leading-5 text-gray-500">
-                                                                john@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                </td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                    Owner</td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                            <img class="h-10 w-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
-
-                                                        <div class="ml-4">
-                                                            <div class="text-sm leading-5 font-medium text-gray-900">
-                                                                John Doe
-                                                            </div>
-                                                            <div class="text-sm leading-5 text-gray-500">
-                                                                john@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                </td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                    Owner</td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                            <img class="h-10 w-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
-
-                                                        <div class="ml-4">
-                                                            <div class="text-sm leading-5 font-medium text-gray-900">
-                                                                John Doe
-                                                            </div>
-                                                            <div class="text-sm leading-5 text-gray-500">
-                                                                john@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                </td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                    Owner</td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                            <img class="h-10 w-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
-
-                                                        <div class="ml-4">
-                                                            <div class="text-sm leading-5 font-medium text-gray-900">
-                                                                John Doe
-                                                            </div>
-                                                            <div class="text-sm leading-5 text-gray-500">
-                                                                john@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                </td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                    Owner</td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                            <img class="h-10 w-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
-
-                                                        <div class="ml-4">
-                                                            <div class="text-sm leading-5 font-medium text-gray-900">
-                                                                John Doe
-                                                            </div>
-                                                            <div class="text-sm leading-5 text-gray-500">
-                                                                john@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                </td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                    Owner</td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="flex items-center">
-                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                            <img class="h-10 w-10 rounded-full"
-                                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                alt="">
-                                                        </div>
-
-                                                        <div class="ml-4">
-                                                            <div class="text-sm leading-5 font-medium text-gray-900">
-                                                                John Doe
-                                                            </div>
-                                                            <div class="text-sm leading-5 text-gray-500">
-                                                                john@example.com</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                                    <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                </td>
-
-                                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                    <span
-                                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                </td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                    Owner</td>
-
-                                                <td
-                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        @endforeach
                                     </table>
                                 </div>
                             </div>
                         </div>
+                        {{-- End of Hotel Edit --}}
+
+                        {{-- Start of Room Edit --}}
+                        <div id="RoomAdmin" class="flex flex-col mt-8">
+                            <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                                <h3 data-toggle="modal" data-target="#AddNewRoom"
+                                    class="cursor-pointer px-4 pb-2 float-right font-bold text-blue-500 ">
+                                    Add new Room</h3>
+
+
+                                <div id="AddNewRoom" class="modal fade items-center" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h3 class="modal-title font-semibold">Add New Room
+                                                </h3>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body flex flex-col px-6 py-5 bg-gray-50">
+                                                <form action="{{ route('admin.addRoom') }}" method="post"
+                                                    enctype="multipart/form-data">
+                                                    @csrf
+
+                                                    <pre><b>{{ str_pad('Hotel ID', 20, ' ') }}:</b>      <input class="bg-gray-200" list="addRoomhotel_name" name="addRoomhotel_id"></pre>
+                                                    <datalist id="addRoomhotel_name">
+                                                        @foreach ($hotels as $hotel)
+                                                            <option value="{{ $hotel->id }}">
+                                                                {{ $hotel->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </datalist>
+                                                    <pre><b>{{ str_pad('Room Name', 20, ' ') }}:</b>      <input class="bg-gray-200" type="text" name="addRoomname"></pre>
+                                                    <pre><b>{{ str_pad('Price', 20, ' ') }}:</b>      <input class="bg-gray-200" type="number" name="addRoomprice"></pre>
+                                                    <pre><b>{{ str_pad('Number of Rooms', 20, ' ') }}:</b>      <input class="bg-gray-200" type="number" min="1" name="addRoomroom_total"></pre>
+                                                    <pre><b>{{ str_pad('Facility', 20, ' ') }}:</b></pre>
+                                                    <br>
+                                                    <textarea name="addRoomfacility"
+                                                        class="bg-gray-200 w-11/12"></textarea>
+
+                                                    <pre><b>{{ str_pad('Image of Room', 20, ' ') }}:</b></pre>
+                                                    <div class="h-32 w-32 border-4 md:box-content mb-2">
+                                                        <img id="addRoomprev_image"
+                                                            src='{{ asset('uploads/hotel_rooms/noImage.jpg') }}'
+                                                            class="object-scale-down w-full h-full">
+                                                    </div>
+                                                    <input id="addRoomroom_image" name="addRoomroom_image" type="file"
+                                                        placeholder="Insert Image"
+                                                        class="w-11/12 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline
+                                                                                                                                                                                                                                                            @error('profile_image') border-red-500 @enderror"
+                                                        value="default.jpg">
+                                                    <button
+                                                        class="w-1/4 px-4 py-2 my-5 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                                                        type="submit">
+                                                        Add Room
+                                                    </button>
+                                                </form>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div
+                                    class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                                    <table class="min-w-full">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    Room Name</th>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    Room Price</th>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    Total Room - Ordered Room</th>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    Facility Desciption</th>
+                                                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                                            </tr>
+                                        </thead>
+
+                                        @foreach ($rooms as $room)
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <div class="flex items-center">
+                                                            <div class="flex-shrink-0 h-10 w-10">
+                                                                <img class="h-10 w-10 rounded-full"
+                                                                    src="{{ asset('uploads/hotel_rooms/' . $room->room_image) }}"
+                                                                    alt="">
+                                                            </div>
+                                                            <input class="roomUpdateroom_image" type="hidden"
+                                                                value="{{ asset('uploads/hotel_rooms/' . $room->room_image) }}">
+                                                            <input class="roomUpdateroom_id" type="hidden"
+                                                                value="{{ $room->id }}">
+                                                            <div class="ml-4">
+                                                                <input class="roomUpdateName" type="hidden"
+                                                                    value="{{ $room->name }}">
+                                                                <div
+                                                                    class="text-sm leading-5 font-medium text-gray-900">
+                                                                    {{ $room->name }}
+                                                                </div>
+                                                                <input class="roomHotelUpdateID" type="hidden"
+                                                                    value="{{ $room->hotel->id }}">
+                                                                <div class="text-sm leading-5 text-gray-500">
+                                                                    {{ $room->hotel->name }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <input class="roomUpdatePrice" type="hidden"
+                                                        value="{{ $room->price }}">
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                                        {{ $room->convertedPrice($room->price) }}
+
+                                                    </td>
+
+                                                    <input class="roomUpdateRoomTotal" type="hidden"
+                                                        value="{{ $room->room_total }}">
+                                                    <input class="roomUpdateRoomOrdered" type="hidden"
+                                                        value="{{ $room->room_ordered }}">
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                                        {{ $room->room_total }} - {{ $room->room_ordered }}
+                                                    </td>
+
+                                                    <input class="roomUpdateFacility" type="hidden"
+                                                        value="{{ $room->facility }}">
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                                        {{ $room->facility }}
+                                                    </td>
+
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                                        <div data-toggle="modal" data-target="#room_edit"
+                                                            class="clicked cursor-pointer text-indigo-600 hover:text-indigo-900">
+                                                            Edit
+                                                        </div>
+                                                        @can('delete', $room)
+                                                            <form method="post"
+                                                                action="{{ route('admin.deleteRoom', $room) }}">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <input type="submit"
+                                                                    class="cursor-pointer text-red-600 font-semibold hover:text-red-900 bg-transparent"
+                                                                    value="Delete">
+                                                            </form>
+                                                        @endcan
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        @endforeach
+                                        <div id="{{ 'room_edit' }}" class="modal fade items-center" role="dialog">
+                                            <div class="modal-dialog">
+
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3 class="modal-title font-semibold">Room No.
+                                                            {{ sprintf('%02s', $room->id) }}/{{ sprintf('%02s', $hotel->id) }}
+                                                        </h3>
+                                                        <button type="button" class="close"
+                                                            data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body flex flex-col px-6 py-5 bg-gray-50">
+                                                        <form action="{{ route('admin.updateRoom') }}" method="post"
+                                                            enctype="multipart/form-data">
+                                                            @csrf
+                                                            <input type="hidden" value={{ $room->id }}
+                                                                name="modalUpdateRoom_id">
+                                                            <input type="hidden" value={{ $room->id }}
+                                                                name="modalUpdateRoomroom_ordered">
+
+                                                            <pre><b>{{ str_pad('Hotel ID', 20, ' ') }}:</b>      <input class="bg-gray-200" list="hotelUpdate_name" name="modalUpdatehotel_id" value="If you see this"></pre>
+                                                            <datalist id="hotelUpdate_name">
+                                                                @foreach ($hotels as $hotel)
+                                                                    <option value="{{ $hotel->id }}">
+                                                                        {{ $hotel->name }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </datalist>
+                                                            <pre><b>{{ str_pad('Room Name', 20, ' ') }}:</b>      <input class="bg-gray-200" type="text" name="modalUpdatename" value="Please close the modal"></pre>
+                                                            <pre><b>{{ str_pad('Price', 20, ' ') }}:</b>      <input class="bg-gray-200" type="number" name="modalUpdateprice" value="{{ $room->price }}"></pre>
+                                                            <pre><b>{{ str_pad('Number of Rooms', 20, ' ') }}:</b>      <input class="bg-gray-200" type="number" min="1" name="modalUpdateroom_total" value="{{ $room->room_total }}"></pre>
+                                                            <pre><b>{{ str_pad('Facility', 20, ' ') }}:</b></pre>
+                                                            <br>
+                                                            <textarea name="modalUpdatefacility"
+                                                                class="bg-gray-200 w-11/12">and click edit again</textarea>
+
+                                                            <pre><b>{{ str_pad('Image of Room', 20, ' ') }}:</b></pre>
+                                                            <div class="h-32 w-32 border-4 md:box-content mb-2">
+                                                                <img id="modalUpdateprev_image"
+                                                                    name="modalUpdateprev_image"
+                                                                    src='{{ asset('uploads/hotel_rooms/noImage.jpg') }}'
+                                                                    class="object-scale-down w-full h-full">
+                                                            </div>
+                                                            <input id="modalUpdateroom_image"
+                                                                name="modalUpdateroom_image" type="file"
+                                                                placeholder="Insert Image"
+                                                                class="w-11/12 px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline
+                                                                                                                                                                                                                                                            @error('profile_image') border-red-500 @enderror"
+                                                                value="default.jpg">
+                                                            <button
+                                                                class="w-1/4 px-4 py-2 my-5 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                                                                type="submit">
+                                                                Edit Room
+                                                            </button>
+                                                        </form>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- End of Room Booking --}}
+
+                        {{-- Start of Transaction Data --}}
+                        <div id="TransactionAdmin" class="flex flex-col mt-8">
+                            <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                                <h3 data-toggle="modal" data-target="#AddNewTransaction"
+                                    class="cursor-pointer px-4 pb-2 float-right font-bold text-blue-500 ">
+                                    Add new Transaction Data</h3>
+
+
+                                <div id="AddNewTransaction" class="modal fade items-center" role="dialog">
+                                    <div class="modal-dialog">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h3 class="modal-title font-semibold">Add New Hotel
+                                                </h3>
+                                                <button type="button" class="close"
+                                                    data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="modal-body flex flex-col px-6 py-5 bg-gray-50">
+                                                <form action="{{ route('admin.addTransaction') }}" method="post"
+                                                    enctype="multipart/form-data">
+                                                    @csrf
+
+                                                    <pre><b>{{ str_pad('User ID', 20, ' ') }}:</b>      <input class="bg-gray-200" list="addTransactionuser_name" name="addTransactionuser_id"></pre>
+                                                    <datalist id="addTransactionuser_name">
+                                                        @foreach ($users as $user)
+                                                            <option value="{{ $user->id }}">
+                                                                {{ $user->name }} - {{ $user->email }}
+                                                            </option>
+                                                        @endforeach
+                                                    </datalist>
+                                                    <pre><b>{{ str_pad('Room ID', 20, ' ') }}:</b>      <input class="bg-gray-200" list="addTransactionroom_name" name="addTransactionroom_id"></pre>
+                                                    <datalist id="addTransactionroom_name">
+                                                        @foreach ($rooms as $room)
+                                                            <option value="{{ $room->id }}">
+                                                                {{ $room->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </datalist>
+                                                    <pre><b>{{ str_pad('Orderer Name', 20, ' ') }}:</b>      <input class="bg-gray-200" type="text" name="addTransactionname"></pre>
+                                                    <pre><b>{{ str_pad('Email', 20, ' ') }}:</b>      <input class="bg-gray-200" type="email" name="addTransactionemail"></pre>
+                                                    <pre><b>{{ str_pad('Phone Number', 20, ' ') }}:</b>      <input class="bg-gray-200" type="text" name="addTransactionphone"></pre>
+                                                    <pre><b>{{ str_pad('Room Ordered', 20, ' ') }}:</b>      <input class="bg-gray-200" type="number" min='1'
+                                                        value="1" name="addTransactionroom_ordered"></pre>
+                                                    <pre><b>{{ str_pad('Check-in Date', 20, ' ') }}:</b>      <input class="bg-gray-200" type="date"  name="addTransactioncheck_in"></pre>
+                                                    <pre><b>{{ str_pad('Check-out Date', 20, ' ') }}:</b>      <input class="bg-gray-200" type="date"  name="addTransactioncheck_out"></pre>
+
+                                                    <button
+                                                        class="w-4/12 px-4 py-2 my-5 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                                                        type="submit">
+                                                        Add Transaction
+                                                    </button>
+                                                </form>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div
+                                    class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                                    <table class="min-w-full">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    Name</th>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    User Account</th>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    Room Ordered</th>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    Phone</th>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    check-in & check-out</th>
+                                                <th
+                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                    Total Price</th>
+                                                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                                            </tr>
+                                        </thead>
+
+                                        @foreach ($transactions as $transaction)
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <div class="flex items-center">
+                                                            <div class="ml-4">
+                                                                <div
+                                                                    class="text-sm leading-5 font-medium text-gray-900">
+                                                                    {{ $transaction->name }}
+                                                                </div>
+                                                                <div class="text-sm leading-5 text-gray-500">
+                                                                    {{ $transaction->email }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <div class="flex items-center">
+                                                            <div>
+                                                                <div
+                                                                    class="text-sm leading-5 font-medium text-gray-900">
+                                                                    {{ $transaction->user->name }}
+                                                                </div>
+                                                                <div class="text-sm leading-5 text-gray-500">
+                                                                    {{ $transaction->user->email }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <div class="flex items-center">
+                                                            <div>
+                                                                <div
+                                                                    class="text-sm leading-5 font-medium text-gray-900">
+                                                                    {{ $transaction->room->hotel->name }} -
+                                                                    {{ $transaction->room->name }}
+                                                                </div>
+                                                                <div class="text-sm leading-5 text-gray-500">
+                                                                    {{ $transaction->room_ordered }}
+                                                                    {{ Str::plural('room', $transaction->room_ordered) }}
+                                                                    ordered
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                                        {{ $transaction->phone }}</td>
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                                        {{ $transaction->check_in }} -
+                                                        {{ $transaction->check_out }}
+                                                    </td>
+
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                                        {{ $transaction->convertedPrice($transaction->totalprice) }}
+                                                    </td>
+
+
+                                                    <td
+                                                        class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                                        <div data-toggle="modal"
+                                                            data-target="{{ '#transaction_edit-' . $transaction->id }}"
+                                                            class="cursor-pointer text-indigo-600 hover:text-indigo-900">
+                                                            Edit
+                                                        </div>
+                                                        @can('delete', $transaction)
+                                                            <form method="post"
+                                                                action="{{ route('admin.deleteTransaction', $transaction) }}">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <input type="submit"
+                                                                    class="cursor-pointer text-red-600 font-semibold hover:text-red-900 bg-transparent"
+                                                                    value="Delete">
+                                                            </form>
+                                                        @endcan
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <div id="{{ 'transaction_edit-' . $transaction->id }}"
+                                                class="modal fade items-center" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h3 class="modal-title font-semibold">Transaction
+                                                                No.
+                                                                {{ sprintf('%02s', $transaction->id) }}-{{ sprintf('%02s', $transaction->user->id) }}/{{ sprintf('%04s', $transaction->room->id) }}
+                                                            </h3>
+                                                            <button type="button" class="close"
+                                                                data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <div class="modal-body flex flex-col px-6 py-5 bg-gray-50">
+                                                            <form action="{{ route('admin.updateTransaction') }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <input type="hidden" value="{{ $transaction->id }}"
+                                                                    name="updateTransactionid">
+                                                                <pre><b>{{ str_pad('User ID', 20, ' ') }}:</b>      <input class="bg-gray-200" list="updateTransactionuser_name" name="updateTransactionuser_id" value="{{ $transaction->user_id }}"></pre>
+                                                                <datalist id="updateTransactionuser_name">
+                                                                    @foreach ($users as $user)
+                                                                        <option value="{{ $user->id }}">
+                                                                            {{ $user->name }} -
+                                                                            {{ $user->email }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </datalist>
+                                                                <pre><b>{{ str_pad('Room ID', 20, ' ') }}:</b>      <input class="bg-gray-200" list="updateTransactionroom_name" name="updateTransactionroom_id" value="{{ $transaction->room_id }}"></pre>
+                                                                <datalist id="updateTransactionroom_name">
+                                                                    @foreach ($rooms as $room)
+                                                                        <option value="{{ $room->id }}">
+                                                                            {{ $room->name }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </datalist>
+                                                                <pre><b>{{ str_pad('Orderer Name', 20, ' ') }}:</b>      <input class="bg-gray-200" type="text" name="updateTransactionname" value="{{ $transaction->name }}"></pre>
+                                                                <pre><b>{{ str_pad('Email', 20, ' ') }}:</b>      <input class="bg-gray-200" type="email" name="updateTransactionemail" value="{{ $transaction->email }}"></pre>
+                                                                <pre><b>{{ str_pad('Phone Number', 20, ' ') }}:</b>      <input class="bg-gray-200" type="text" name="updateTransactionphone" value="{{ $transaction->phone }}"></pre>
+                                                                <pre><b>{{ str_pad('Room Ordered', 20, ' ') }}:</b>      <input class="bg-gray-200" type="number" min='1' value="{{ $transaction->room_ordered }}"
+                                                                            value="1" name="updateTransactionroom_ordered"></pre>
+                                                                <pre><b>{{ str_pad('Check-in Date', 20, ' ') }}:</b>      <input class="bg-gray-200" type="date"  name="updateTransactioncheck_in" value="{{ $transaction->check_in }}"></pre>
+                                                                <pre><b>{{ str_pad('Check-out Date', 20, ' ') }}:</b>      <input class="bg-gray-200" type="date"  name="updateTransactioncheck_out" value="{{ $transaction->check_out }}"></pre>
+
+
+                                                                <button
+                                                                    class="w-4/12 px-4 py-2 my-5 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+                                                                    type="submit">
+                                                                    Edit Transaction
+                                                                </button>
+                                                            </form>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- End of Transaction Data --}}
+
                     </div>
                 </main>
             </div>
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        $('#clickAll').click(function() {
+            $('#HotelAdmin').show();
+            $('#RoomAdmin').show();
+            $('#TransactionAdmin').show();
+            $('#clickAll').addClass('bg-gray-700 bg-opacity-25 text-gray-100');
+            $('#clickAll').removeClass(
+                'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100');
+            if ($('#clickHotel').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickHotel').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickHotel').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+            if ($('#clickRoom').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickRoom').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickRoom').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+            if ($('#clickTransaction').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickTransaction').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickTransaction').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+
+        });
+        $('#clickHotel').click(function() {
+            $('#HotelAdmin').show();
+            $('#RoomAdmin').hide();
+            $('#TransactionAdmin').hide();
+            $('#clickHotel').addClass('bg-gray-700 bg-opacity-25 text-gray-100');
+            $('#clickHotel').removeClass(
+                'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100');
+            if ($('#clickAll').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickAll').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickAll').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+            if ($('#clickRoom').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickRoom').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickRoom').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+            if ($('#clickTransaction').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickTransaction').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickTransaction').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+        });
+        $('#clickRoom').click(function() {
+            $('#HotelAdmin').hide();
+            $('#RoomAdmin').show();
+            $('#TransactionAdmin').hide();
+            $('#clickRoom').addClass('bg-gray-700 bg-opacity-25 text-gray-100');
+            $('#clickRoom').removeClass(
+                'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100');
+            if ($('#clickAll').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickAll').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickAll').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+            if ($('#clickHotel').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickHotel').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickHotel').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+            if ($('#clickTransaction').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickTransaction').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickTransaction').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+        });
+        $('#clickTransaction').click(function() {
+            $('#HotelAdmin').hide();
+            $('#RoomAdmin').hide();
+            $('#TransactionAdmin').show();
+            $('#clickTransaction').addClass('bg-gray-700 bg-opacity-25 text-gray-100');
+            $('#clickTransaction').removeClass(
+                'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100');
+            if ($('#clickAll').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickAll').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickAll').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+            if ($('#clickRoom').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickRoom').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickRoom').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+            if ($('#clickHotel').hasClass('bg-gray-700 bg-opacity-25 text-gray-100')) {
+                $('#clickHotel').removeClass('bg-gray-700 bg-opacity-25 text-gray-100')
+                $('#clickHotel').addClass(
+                    'text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100')
+
+            }
+        });
+
+        $('#closeError').click(function() {
+            $('#NotifError').hide();
+        });
+        $('#closeSuccess').click(function() {
+            $('#NotifSuccess').hide();
+        });
+        $('#addRoomroom_image').change(function() {
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+
+                $('#addRoomprev_image').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(this.files[0]);
+
+        });
+        $('#modalUpdateroom_image').change(function() {
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+
+                $('#modalUpdateprev_image').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(this.files[0]);
+
+        });
+        var elements = document.getElementsByClassName("clicked");
+
+        var myFunction = function() {
+            let id = $(this).closest("tr").find(".roomUpdateroom_id").val();
+            let room_image = $(this).closest("tr").find(".roomUpdateroom_image").val();
+            let name = $(this).closest("tr").find(".roomUpdateName").val();
+            let hotel_id = $(this).closest("tr").find(".roomHotelUpdateID").val();
+            let price = parseInt($(this).closest("tr").find(".roomUpdatePrice").val());
+            let room_total = parseInt($(this).closest("tr").find(".roomUpdateRoomTotal").val());
+            let room_ordered = parseInt($(this).closest("tr").find(".roomUpdateRoomOrdered").val());
+            let facility = $(this).closest("tr").find(".roomUpdateFacility").val();
+
+
+            $('input[name=modalUpdateRoom_id]').val(id);
+            $('input[name=modalUpdatehotel_id]').val(hotel_id);
+            $('input[name=modalUpdatename]').val(name);
+            $('input[name=modalUpdateprice]').val(price);
+            $('input[name=modalUpdateRoomroom_ordered]').val(room_ordered);
+            $('input[name=modalUpdateroom_total]').val(room_total);
+            $('textarea[name=modalUpdatefacility]').text(facility);
+            $('img[name=modalUpdateprev_image]').attr('src', room_image);
+
+        };
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('click', myFunction, false);
+        }
+    });
+
+</script>
 
 </html>
