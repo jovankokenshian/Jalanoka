@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Rules\PhoneNumber;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -57,12 +58,10 @@ class ProfileController extends Controller
         $user = User::where('id', Auth::user()->id)
             ->first(); // this point is the most important to change
         if ($request->hasFile('profile_image')) {
-            $profile_image = $request->file('profile_image');
-            $filename = time() . '.' . $profile_image->getClientOriginalExtension();
-            Image::make($profile_image)->resize(300, 300)->save(public_path('storage\profile_images\\' . $filename));
+            $filename = Storage::disk('s3')->put('images/profile_images', $request->file('profile_image'), "public");
         }
-        if ($user->profile_image != 'default.jpg')
-            File::delete(public_path('storage\profile_images\\' . $user->profile_image));
+        if ($user->profile_image != 'images/profile_images/default.jpg')
+            Storage::disk('s3')->delete('images/profile_images' . $request->file('profile_image'));
         $user->profile_image = $filename;
         $user->save();
         return back()->with('message', 'Profile Updated');

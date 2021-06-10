@@ -116,7 +116,7 @@ class AdminController extends Controller
         //store User
         $room_image = $request->file('addRoomroom_image');
         $filename = time() . '.' . $room_image->getClientOriginalExtension();
-        Image::make($room_image)->resize(300, 300)->save(public_path('storage\hotel_rooms\\' . $filename));
+        Image::make($room_image)->resize(300, 300)->save(public_path('uploads\hotel_rooms\\' . $filename));
 
         Room::create([
             'hotel_id'  => $request['addRoomhotel_id'],
@@ -148,8 +148,8 @@ class AdminController extends Controller
             ->first(); // this point is the most important to change
         $room_image = $request->file('modalUpdateroom_image');
         $filename = time() . '.' . $room_image->getClientOriginalExtension();
-        Image::make($room_image)->resize(300, 300)->save(public_path('storage\hotel_rooms\\' . $filename));
-        File::delete(public_path('storage\hotel_rooms\\' . $room->room_image));
+        Image::make($room_image)->resize(300, 300)->save(public_path('uploads\hotel_rooms\\' . $filename));
+        File::delete(public_path('uploads\hotel_rooms\\' . $room->room_image));
         //update User
         $pastname = $room->name;
         $room->hotel_id = $request['modalUpdatehotel_id'];
@@ -168,7 +168,7 @@ class AdminController extends Controller
         $this->authorize('delete', $room);
         $name = $room->name;
 
-        File::delete(public_path('storage\hotel_rooms\\' . $room->room_image));
+        File::delete(public_path('uploads\hotel_rooms\\' . $room->room_image));
         $room->delete();
 
         return back()->with('success', 'Room ' . $name . ' Successfully deleted');;

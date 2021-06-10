@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Carbon\Carbon;
 use App\Models\User;
 use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -36,12 +37,11 @@ class RegisterController extends Controller
             'date_of_birth' => 'required|date',
         ]);
         //store User
-        $filename = "default.jpg";
+        $filename = "images/profile_images/default.jpg";
         if ($request->hasFile('profile_image')) {
-            $profile_image = $request->file('profile_image');
-            $filename = time() . '.' . $profile_image->getClientOriginalExtension();
-            Image::make($profile_image)->resize(300, 300)->save(public_path('storage\profile_images\\' . $filename));
+            $filename = Storage::disk('s3')->put('images/profile_images', $request->file('profile_image'), "public");
         }
+
         User::create([
             'name' => $request->name,
             'email' => $request->email,

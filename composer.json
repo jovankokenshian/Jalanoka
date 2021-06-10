@@ -8,13 +8,15 @@
         "php": "^7.3|^8.0",
         "akaunting/laravel-money": "^1.2",
         "blade-ui-kit/blade-heroicons": "^1.2",
+        "cloudinary-labs/cloudinary-laravel": "^1.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^7.3",
         "inertiajs/inertia-laravel": "^0.4.2",
         "intervention/image": "^2.5",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
+        "league/flysystem-aws-s3-v3": "~1.0",
         "mews/captcha": "^3.2"
     },
     "require-dev": {
@@ -52,7 +54,8 @@
         ],
         "post-install-cmd": [
             "php artisan clear-compiled",
-            "chmod -R 777 public/"
+            "chmod -R 777 public/",
+            "ln -sr storage/app/public public/storage"
         ]
     },
     "extra": {

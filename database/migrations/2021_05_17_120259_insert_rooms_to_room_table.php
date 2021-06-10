@@ -21,7 +21,7 @@ class InsertRoomsToRoomTable extends Migration
                 'price' => '1200000',
                 'facility' => '2 separated normal-sized bed and 1 bathroom',
                 'room_total' => '5',
-                'room_image' => 'placeholder1.jpg'
+                'room_image' => 'images/hotel_rooms/placeholder1.jpg'
             ],
             [
                 'hotel_id' => '1',
@@ -29,7 +29,7 @@ class InsertRoomsToRoomTable extends Migration
                 'price' => '1400000',
                 'facility' => '1 queen-sized bed and 1 bathroom',
                 'room_total' => '9',
-                'room_image' => 'placeholder2.jpg'
+                'room_image' => 'images/hotel_rooms/placeholder2.jpg'
             ],
             [
                 'hotel_id' => '2',
@@ -37,7 +37,7 @@ class InsertRoomsToRoomTable extends Migration
                 'price' => '2100000',
                 'facility' => '2 queen-sized bed, 2 bathrooms, and 1 sauna',
                 'room_total' => '2',
-                'room_image' => 'placeholder3.jpeg'
+                'room_image' => 'images/hotel_rooms/placeholder3.jpg'
             ]
         ]);
     }

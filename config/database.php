@@ -45,10 +45,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'db4free.net'),
+            'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'hotelbookingdbs'),
-            'username' => env('DB_USERNAME', 'jovankokenshians'),
+            'database' => env('DB_DATABASE', 'hotelbookingdb'),
+            'username' => env('DB_USERNAME', 'jovankokenshian'),
             'password' => env('DB_PASSWORD', 'asdfghjkl'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',

@@ -67,7 +67,7 @@
                         @foreach ($rooms as $room)
                             <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden" id="secDiv">
                                 <div class="flex items-end justify-end h-56 w-full bg-cover"
-                                    style="background-image: url('{{ asset('storage/hotel_rooms/' . $room->room_image) }}')">
+                                    style="background-image: url('{{Storage::disk('s3')->url($room->room_image) }}')">
                                     <a href="{{ route('orderRoom', $room) }}" name="order_room"
                                         class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                         <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
