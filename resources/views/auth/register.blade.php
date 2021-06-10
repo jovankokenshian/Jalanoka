@@ -81,7 +81,7 @@
                                 Profile Image
                             </label>
                             <div class="h-32 w-32 border-4 md:box-content mb-2">
-                                <img id="prev_image" src='{{ asset('uploads/profile_images/default.jpg') }}'
+                                <img id="prev_image" src='{{ asset('storage/profile_images/default.jpg') }}'
                                     class="object-scale-down w-full h-full">
                             </div>
                             <input id="profile_image" name="profile_image" type="file" placeholder="Insert Image"

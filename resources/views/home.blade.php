@@ -22,7 +22,7 @@
                     <div class="flex items-center justify-center">
                         <div class="max-w-md">
                             <img class="object-cover object-center w-full rounded-md shadow" style="height: 500px;"
-                                src="{{ asset('uploads/hotel_rooms/' . $rooms[0]->room_image) }}">
+                                src="{{ asset('storage/hotel_rooms/' . $rooms[0]->room_image) }}">
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="flex items-center justify-center">
                         <div class="max-w-md">
                             <img class="object-cover object-center w-full rounded-md shadow" style="height: 500px;"
-                                src="{{ asset('uploads/hotel_rooms/' . $rooms[1]->room_image) }}">
+                                src="{{ asset('storage/hotel_rooms/' . $rooms[1]->room_image) }}">
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                     <div class="flex items-center justify-center">
                         <div class="max-w-md">
                             <img class="object-cover object-center w-full rounded-md shadow" style="height: 500px;"
-                                src="{{ asset('uploads/hotel_rooms/' . $rooms[1]->room_image) }}">
+                                src="{{ asset('storage/hotel_rooms/' . $rooms[1]->room_image) }}">
                         </div>
                     </div>
                 </div>

@@ -40,7 +40,7 @@ class RegisterController extends Controller
         if ($request->hasFile('profile_image')) {
             $profile_image = $request->file('profile_image');
             $filename = time() . '.' . $profile_image->getClientOriginalExtension();
-            Image::make($profile_image)->resize(300, 300)->save(public_path('uploads\profile_images\\' . $filename));
+            Image::make($profile_image)->resize(300, 300)->save(public_path('storage\profile_images\\' . $filename));
         }
         User::create([
             'name' => $request->name,
