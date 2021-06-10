@@ -191,7 +191,7 @@
                                 data-target="{{ '#booked-' . $transaction->id }}"
                                 class="cursor-pointer sm:grid grid-cols-5 bg-white shadow-2xl relative lg:max-w-3xl sm:p-4 rounded-lg hover:scale-105 ease-out transform transition duration-300 submit">
                                 <div class="flex items-end justify-end w-full bg-cover  rounded-lg"
-                                    style="background-image: url('{{ asset('uploads/hotel_rooms/' . $transaction->room->room_image) }}')">
+                                    style="background-image: url('{{ Storage::disk('s3')->url($transaction->room->room_image) }}')">
                                 </div>
                                 <div class="self-center px-4 py-4 sm:px-0 sm:py-0 sm:pl-10 col-span-3">
                                     <h2 class="text-gray-800 capitalize text-xl font-bold ">

@@ -18,6 +18,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
@@ -114,9 +115,7 @@ class AdminController extends Controller
             return Redirect::back()->withErrors($validator);
         }
         //store User
-        $room_image = $request->file('addRoomroom_image');
-        $filename = time() . '.' . $room_image->getClientOriginalExtension();
-        Image::make($room_image)->resize(300, 300)->save(public_path('uploads\hotel_rooms\\' . $filename));
+        $filename = Storage::disk('s3')->put('images/hotel_rooms', $request->file('addRoomroom_image'), "public");
 
         Room::create([
             'hotel_id'  => $request['addRoomhotel_id'],
@@ -148,8 +147,8 @@ class AdminController extends Controller
             ->first(); // this point is the most important to change
         $room_image = $request->file('modalUpdateroom_image');
         $filename = time() . '.' . $room_image->getClientOriginalExtension();
-        Image::make($room_image)->resize(300, 300)->save(public_path('uploads\hotel_rooms\\' . $filename));
-        File::delete(public_path('uploads\hotel_rooms\\' . $room->room_image));
+        $filename = Storage::disk('s3')->put('images/hotel_rooms', $request->file('modalUpdateroom_image'), "public");
+        Storage::disk('s3')->delete($room->room_image);
         //update User
         $pastname = $room->name;
         $room->hotel_id = $request['modalUpdatehotel_id'];
@@ -168,7 +167,7 @@ class AdminController extends Controller
         $this->authorize('delete', $room);
         $name = $room->name;
 
-        File::delete(public_path('uploads\hotel_rooms\\' . $room->room_image));
+        Storage::disk('s3')->delete($room->room_image);
         $room->delete();
 
         return back()->with('success', 'Room ' . $name . ' Successfully deleted');;

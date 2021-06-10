@@ -61,7 +61,7 @@ class ProfileController extends Controller
             $filename = Storage::disk('s3')->put('images/profile_images', $request->file('profile_image'), "public");
         }
         if ($user->profile_image != 'images/profile_images/default.jpg')
-            Storage::disk('s3')->delete('images/profile_images' . $request->file('profile_image'));
+            Storage::disk('s3')->delete($request->file('profile_image'));
         $user->profile_image = $filename;
         $user->save();
         return back()->with('message', 'Profile Updated');

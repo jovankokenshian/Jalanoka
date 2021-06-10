@@ -121,7 +121,7 @@
                             <button @click="dropdownOpen = ! dropdownOpen"
                                 class="relative block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none">
                                 <img class="h-full w-full object-cover"
-                                    src="{{ asset('uploads/profile_images/' . $admin) }}" alt="Your avatar">
+                                    src="{{ Storage::disk('s3')->url($admin) }}" alt="Your avatar">
                             </button>
 
                             <div x-show="dropdownOpen" @click="dropdownOpen = false"
@@ -512,7 +512,7 @@
                                                     <pre><b>{{ str_pad('Image of Room', 20, ' ') }}:</b></pre>
                                                     <div class="h-32 w-32 border-4 md:box-content mb-2">
                                                         <img id="addRoomprev_image"
-                                                            src='{{ asset('uploads/hotel_rooms/noImage.jpg') }}'
+                                                            src='{{ Storage::disk('s3')->url('images/hotel_rooms/noImage.jpg') }}'
                                                             class="object-scale-down w-full h-full">
                                                     </div>
                                                     <input id="addRoomroom_image" name="addRoomroom_image" type="file"
@@ -567,11 +567,11 @@
                                                         <div class="flex items-center">
                                                             <div class="flex-shrink-0 h-10 w-10">
                                                                 <img class="h-10 w-10 rounded-full"
-                                                                    src="{{ asset('uploads/hotel_rooms/' . $room->room_image) }}"
+                                                                    src="{{ Storage::disk('s3')->url($room->room_image) }}"
                                                                     alt="">
                                                             </div>
                                                             <input class="roomUpdateroom_image" type="hidden"
-                                                                value="{{ asset('uploads/hotel_rooms/' . $room->room_image) }}">
+                                                                value="{{ Storage::disk('s3')->url($room->room_image) }}">
                                                             <input class="roomUpdateroom_id" type="hidden"
                                                                 value="{{ $room->id }}">
                                                             <div class="ml-4">
@@ -674,7 +674,7 @@
                                                             <div class="h-32 w-32 border-4 md:box-content mb-2">
                                                                 <img id="modalUpdateprev_image"
                                                                     name="modalUpdateprev_image"
-                                                                    src='{{ asset('uploads/hotel_rooms/noImage.jpg') }}'
+                                                                    src='{{ Storage::disk('s3')->url('images/hotel_rooms/noImage.jpg') }}'
                                                                     class="object-scale-down w-full h-full">
                                                             </div>
                                                             <input id="modalUpdateroom_image"
