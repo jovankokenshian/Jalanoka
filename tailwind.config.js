@@ -12,6 +12,10 @@ module.exports = {
         'star': "url('../images/starbg.jpg')",
         'plus': "url('../images/icon/add_image.png')",
         'home': "url('../images/home2.jpg')",
+        'jovan': "url('../images/jovan.jpg')",
+        'felix': "url('../images/felix.jpg')",
+        'richard': "url('../images/richard.jpg')",
+
         'footer-texture': "url('/img/footer-texture.png')",
       }),
       keyframes: {
