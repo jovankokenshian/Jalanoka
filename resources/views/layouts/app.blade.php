@@ -74,7 +74,7 @@
                         href="{{ route('register') }}">Register</a>
                 @endguest
                 <a class="px-4 py-1 text-sm font-medium text-center text-gray-200 transition duration-300  sm:hover:scale-110 hover:scale-105 ease-out transform border rounded hover:bg-indigo-400"
-                    href="#">About Us</a>
+                    href="{{ route('aboutus') }}">About Us</a>
             </div>
         </nav>
         @if (Request::is('/'))

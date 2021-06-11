@@ -27,6 +27,10 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->name('aboutus');
+
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::post('/admin/updateHotel', [AdminController::class, 'updateHotel'])->name('admin.updateHotel');
 Route::post('/admin/addHotel', [AdminController::class, 'addHotel'])->name('admin.addHotel');
