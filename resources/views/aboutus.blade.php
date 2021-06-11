@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <style>
     .dark{color:rgba(55, 65, 81,1);}
     body{background:white !important;}
@@ -51,3 +54,4 @@
     
     <!-- card end -->
   </div>
+  @endsection
