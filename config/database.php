@@ -45,11 +45,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'db4free.net'),
+            'host' => env('DB_HOST', 'us-cdbr-east-04.cleardb.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'hotelbookingdbs'),
-            'username' => env('DB_USERNAME', 'jovankokenshians'),
-            'password' => env('DB_PASSWORD', 'asdfghjkl'),
+            'database' => env('DB_DATABASE', 'heroku_6c73d50ca0a33ab'),
+            'username' => env('DB_USERNAME', 'b22f796791d8fd'),
+            'password' => env('DB_PASSWORD', '984f6d54'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
