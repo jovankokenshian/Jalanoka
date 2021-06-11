@@ -1,6 +1,4 @@
-Install Composer, Laravel Mix, node js, tailwindjs
-
-npm run dev
+Install Composer, Laravel Mix, nodejs, tailwindcss
 
 composer require mews/captcha
 composer require intervention/image     
@@ -8,3 +6,5 @@ composer require akaunting/laravel-money
 npm install --save aos@next
 
 
+To run site locally:
+npm artisan serve
